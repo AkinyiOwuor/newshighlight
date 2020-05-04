@@ -82,41 +82,41 @@ def get_articles(source_id):
     return articles_results
 
 
-# def process_articles(articles_list):
-#     '''
-#     Function  that processes the new articles and transform them to a list of Objects
-#     Args:
-#         articles_list: A list of dictionaries that contain article details
-#     Returns :
-#         articles_results: A list of article objects
-#     '''
-#     articles_results = []
-#     for article_item in articles_list:
+def process_articles(articles_list):
+    '''
+    Function  that processes the new articles and transform them to a list of Objects
+    Args:
+        articles_list: A list of dictionaries that contain article details
+    Returns :
+        articles_results: A list of article objects
+    '''
+    articles_results = []
+    for article_item in articles_list:
      
-#         title = article_item.get('title')
-#         description = article_item.get('description')
-#         url = article_item.get('url')
-#         urlToImage = article_item.get('urlToImage')
+        title = article_item.get('title')
+        description = article_item.get('description')
+        url = article_item.get('url')
+        urlToImage = article_item.get('urlToImage')
         
 
-#         if urlToImage:
-#             articles_object = Article(title, description, url, urlToImage)
-#             articles_results.append(articles_object)
+        if urlToImage:
+            articles_object = Article(title, description, url, urlToImage)
+            articles_results.append(articles_object)
 
-#     return articles_results
+    return articles_results
 
-# def search_article(article_name):
-#     get_search_url = 'https://newsapi.org/v2/everything?language=en&q={}&apiKey=21b011f88eac4c0a8afec44dda193304'.format(article_name)
+def search_article(article_name):
+    get_search_url = 'https://newsapi.org/v2/everything?language=en&q={}&apiKey=21b011f88eac4c0a8afec44dda193304'.format(article_name)
 
-#     with urllib.request.urlopen(get_search_url) as url:
-#         search_article_data = url.read()
-#         search_article_response = json.loads(search_article_data)
-#         print (search_article_response)
+    with urllib.request.urlopen(get_search_url) as url:
+        search_article_data = url.read()
+        search_article_response = json.loads(search_article_data)
+        print (search_article_response)
 
-#         search_article_results = None
+        search_article_results = None
 
-#         if search_article_response['articles']:
-#             search_article_list = search_article_response['articles']
-#             search_article_results = process_articles(search_article_list)
+        if search_article_response['articles']:
+            search_article_list = search_article_response['articles']
+            search_article_results = process_articles(search_article_list)
 
-#     return search_article_results
+    return search_article_results

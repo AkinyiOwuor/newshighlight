@@ -11,16 +11,16 @@ class Config:
     NEWS_API_KEY = os.environ.get('NEWS_API_KEY')
     
 
-# class ProdConfig(Config):
-#     pass
+class ProdConfig(Config):
+    pass
 
 
-# class DevConfig(Config):
+class DevConfig(Config):
 
-#     ENV = 'production'
-#     DEBUG = True
+    ENV = 'production'
+    DEBUG = True
 
-# config_option = {
-# 'development':DevConfig,
-# 'production':ProdConfig
-# }
+config_option = {
+'development':DevConfig,
+'production':ProdConfig
+}

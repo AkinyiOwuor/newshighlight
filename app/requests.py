@@ -61,25 +61,25 @@ def process_results(newsource_list):
 
     return newsource_results
 
-# def get_articles(source_id):
-#     '''
-#     Function that gets the json response to our url request
-#     '''
-#     get_articles_url = 'https://newsapi.org/v2/everything?sources={}&apiKey=21b011f88eac4c0a8afec44dda193304'.format(source_id)
+def get_articles(source_id):
+    '''
+    Function that gets the json response to our url request
+    '''
+    get_articles_url = 'https://newsapi.org/v2/everything?sources={}&apiKey=21b011f88eac4c0a8afec44dda193304'.format(source_id)
  
 
-#     with urllib.request.urlopen(get_articles_url) as url:
-#         get_articles_data = url.read()
-#         get_articles_response = json.loads(get_articles_data)
+    with urllib.request.urlopen(get_articles_url) as url:
+        get_articles_data = url.read()
+        get_articles_response = json.loads(get_articles_data)
         
         
-#         articles_results = None
+        articles_results = None
 
-#         if get_articles_response['articles']:
-#             articles_results_list = get_articles_response['articles']
-#             articles_results = process_articles(articles_results_list)
+        if get_articles_response['articles']:
+            articles_results_list = get_articles_response['articles']
+            articles_results = process_articles(articles_results_list)
 
-#     return articles_results
+    return articles_results
 
 
 # def process_articles(articles_list):

@@ -13,18 +13,18 @@ class Source:
 
 
 
-# class Article:
+class Article:
 
-#     '''
-#     Aticle class to define Article Objects
-#     '''
+    '''
+    Aticle class to define Article Objects
+    '''
 
 
-#     def __init__(self,title,description,url,urlToImage):
-#         self.title = title
-#         self.description = description
-#         self.url = url
-#         self.urlToImage = urlToImage
+    def __init__(self,title,description,url,urlToImage):
+        self.title = title
+        self.description = description
+        self.url = url
+        self.urlToImage = urlToImage
 
 
     
